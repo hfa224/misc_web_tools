@@ -124,7 +124,7 @@ body {
   color: var(--color-dark);
   padding: 3vw 5vw 5vw 5vw;
   font-family: var(--font-stack);
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   line-height: 1.5;
   display: flex;
   flex-wrap: wrap;
@@ -336,4 +336,16 @@ th {
 
 hr {
   border-color: rgba(0, 0, 0, 0.1);
+}
+
+#statuscafe {
+    padding: .5em;
+    background-color: azure;
+    border: 1px solid midnightblue;
+}
+#statuscafe-username {
+    margin-bottom: .5em;
+}
+#statuscafe-content {
+    margin: 0 1em 0.5em 1em;
 }
