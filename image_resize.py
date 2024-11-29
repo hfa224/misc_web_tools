@@ -1,6 +1,6 @@
 from PIL import Image
 from os import listdir, getcwd
-from os.path import isfile, join
+from os.path import isfile, join, exists, makedirs
 import re
 import sys
 import math
@@ -8,7 +8,7 @@ import math
 def image_title_repl(matchobj):
     """replace img_title with img_title_resized"""
     file_name = matchobj.group(0)
-    return file_name + "_resized"
+    return "/resized/" + file_name
 
 percentage = int(sys.argv[1]) if len(sys.argv) > 1 else 50
 
@@ -29,6 +29,9 @@ onlyimagefiles = [
 
 # list files in image
 print("Found the following image files: ", onlyimagefiles)
+
+if not exists(current_dir + "/resized/"):
+    makedirs(current_dir + "/resized/")
 
 for image_file in onlyimagefiles:
     image = Image.open(image_file)
